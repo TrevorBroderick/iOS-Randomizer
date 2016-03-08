@@ -1,0 +1,470 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1509" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <scenes>
+        <!--Random Choice Controller-->
+        <scene sceneID="z0v-jB-Ufx">
+            <objects>
+                <viewController id="Qwp-FR-6Ee" customClass="RandomChoiceController" customModule="Randomizer" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="J1W-IQ-aTw"/>
+                        <viewControllerLayoutGuide type="bottom" id="LuM-qp-zbT"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="SUP-KN-bQl">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="baX-EJ-28P">
+                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
+                                <items>
+                                    <navigationItem title="Random Choice" id="kNU-Yt-uYt">
+                                        <barButtonItem key="leftBarButtonItem" title="Back" id="dim-oi-9Jt">
+                                            <connections>
+                                                <segue destination="BYZ-38-t0r" kind="show" id="esG-a4-IcA"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Add Choice" id="2uB-F0-Auw">
+                                            <connections>
+                                                <action selector="addItem:" destination="Qwp-FR-6Ee" id="0gK-u4-CXl"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="CFC-8p-27w">
+                                <rect key="frame" x="0.0" y="64" width="600" height="271"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TextCell" textLabel="zQ3-kP-7c7" style="IBUITableViewCellStyleDefault" id="eCl-DN-AYS">
+                                        <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="eCl-DN-AYS" id="6VT-hI-m1Q">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="zQ3-kP-7c7">
+                                                    <rect key="frame" x="15" y="0.0" width="570" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7lb-HX-tVG">
+                                <rect key="frame" x="253" y="452" width="95" height="30"/>
+                                <color key="backgroundColor" red="0.43529415129999999" green="0.45098042490000001" blue="0.8980392814" alpha="1" colorSpace="deviceRGB"/>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="15"/>
+                                <state key="normal" title="Randomize">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="getRandomChoice:" destination="Qwp-FR-6Ee" eventType="touchUpInside" id="RX8-f0-l72"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="7lb-HX-tVG" firstAttribute="top" secondItem="CFC-8p-27w" secondAttribute="bottom" constant="100" id="2ca-c4-ngb"/>
+                            <constraint firstItem="7lb-HX-tVG" firstAttribute="width" relation="lessThanOrEqual" secondItem="SUP-KN-bQl" secondAttribute="width" id="2sh-H0-ZD7"/>
+                            <constraint firstItem="baX-EJ-28P" firstAttribute="width" secondItem="CFC-8p-27w" secondAttribute="width" id="8px-EH-Hxr"/>
+                            <constraint firstItem="baX-EJ-28P" firstAttribute="width" secondItem="SUP-KN-bQl" secondAttribute="width" id="MTv-pB-0lx"/>
+                            <constraint firstItem="baX-EJ-28P" firstAttribute="centerX" secondItem="CFC-8p-27w" secondAttribute="centerX" id="SS7-qH-Zky"/>
+                            <constraint firstItem="baX-EJ-28P" firstAttribute="width" secondItem="CFC-8p-27w" secondAttribute="width" id="Zkg-yu-SSK"/>
+                            <constraint firstItem="7lb-HX-tVG" firstAttribute="centerX" secondItem="SUP-KN-bQl" secondAttribute="centerX" id="t5o-iG-t2i"/>
+                            <constraint firstItem="baX-EJ-28P" firstAttribute="centerX" secondItem="SUP-KN-bQl" secondAttribute="centerX" id="zL8-jJ-6Fc"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="choiceTable" destination="CFC-8p-27w" id="9tg-51-PHL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9JG-co-4lp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="218" y="-633"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Randomizer" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VAK-i9-g9o">
+                                <rect key="frame" x="223" y="192" width="155" height="30"/>
+                                <color key="backgroundColor" red="0.43529415130615234" green="0.45098042488098145" blue="0.89803928136825562" alpha="1" colorSpace="deviceRGB"/>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="15"/>
+                                <inset key="contentEdgeInsets" minX="4" minY="0.0" maxX="4" maxY="0.0"/>
+                                <state key="normal" title="Random Number">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="pKo-JX-6Kr" kind="show" id="Sjt-os-BGZ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0jb-oF-X7F">
+                                <rect key="frame" x="223" y="230" width="155" height="30"/>
+                                <color key="backgroundColor" red="0.43529415129999999" green="0.45098042490000001" blue="0.8980392814" alpha="1" colorSpace="deviceRGB"/>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="15"/>
+                                <state key="normal" title="Random Letter">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="XHY-v2-fqt" kind="show" id="1a2-h3-qtn"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6aA-ax-Y1w">
+                                <rect key="frame" x="223" y="268" width="155" height="30"/>
+                                <color key="backgroundColor" red="0.43529415129999999" green="0.45098042490000001" blue="0.8980392814" alpha="1" colorSpace="deviceRGB"/>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="15"/>
+                                <state key="normal" title="Random Password">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="zIa-vo-cRC" kind="show" id="TSL-58-RZF"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bRn-8T-BiX">
+                                <rect key="frame" x="223" y="306" width="155" height="30"/>
+                                <color key="backgroundColor" red="0.43529415129999999" green="0.45098042490000001" blue="0.8980392814" alpha="1" colorSpace="deviceRGB"/>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="15"/>
+                                <state key="normal" title="Random Choice">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="Qwp-FR-6Ee" kind="show" id="mt6-6S-kBV"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Randomizer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="971-TC-RMJ">
+                                <rect key="frame" x="183" y="76" width="235" height="57"/>
+                                <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="39"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="VAK-i9-g9o" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="3BI-tE-MuJ"/>
+                            <constraint firstItem="971-TC-RMJ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="4Tl-v3-XnP"/>
+                            <constraint firstItem="0jb-oF-X7F" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="FFJ-Gn-ibi"/>
+                            <constraint firstItem="6aA-ax-Y1w" firstAttribute="width" secondItem="bRn-8T-BiX" secondAttribute="width" id="I5X-w3-F4z"/>
+                            <constraint firstItem="6aA-ax-Y1w" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="YtU-E9-T3W"/>
+                            <constraint firstItem="0jb-oF-X7F" firstAttribute="width" secondItem="6aA-ax-Y1w" secondAttribute="width" id="eo2-Wo-Sor"/>
+                            <constraint firstItem="VAK-i9-g9o" firstAttribute="width" secondItem="0jb-oF-X7F" secondAttribute="width" id="pb7-ZK-Axo"/>
+                            <constraint firstItem="bRn-8T-BiX" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="t27-60-XT9"/>
+                            <constraint firstItem="bRn-8T-BiX" firstAttribute="width" relation="lessThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="width" id="zKN-cD-cAO"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="188" y="147"/>
+        </scene>
+        <!--Random Password Controller-->
+        <scene sceneID="xW7-4f-ghG">
+            <objects>
+                <viewController id="zIa-vo-cRC" customClass="RandomPasswordController" customModule="Randomizer" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="bFp-af-loi"/>
+                        <viewControllerLayoutGuide type="bottom" id="VDQ-mO-0ij"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="vHW-xJ-xdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PQM-W1-9fi">
+                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
+                                <items>
+                                    <navigationItem title="Random Password" id="YfL-sY-QxY">
+                                        <barButtonItem key="leftBarButtonItem" title="Back" id="wsP-m3-2sm">
+                                            <connections>
+                                                <segue destination="BYZ-38-t0r" kind="show" id="DIK-WU-lSi"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Edit" id="s6L-Kf-bmT">
+                                            <connections>
+                                                <segue destination="7tV-zY-moR" kind="show" id="aKk-7K-Mda"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="hunter2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IQ6-M8-4qN">
+                                <rect key="frame" x="20" y="276" width="560" height="85"/>
+                                <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="70"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0oD-h6-CDf">
+                                <rect key="frame" x="253" y="435" width="95" height="30"/>
+                                <color key="backgroundColor" red="0.43529415129999999" green="0.45098042490000001" blue="0.8980392814" alpha="1" colorSpace="deviceRGB"/>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="15"/>
+                                <inset key="contentEdgeInsets" minX="8" minY="5" maxX="8" maxY="5"/>
+                                <state key="normal" title="Randomize">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="anotherRandomPassword:" destination="zIa-vo-cRC" eventType="touchUpInside" id="PKO-T3-YcO"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="IQ6-M8-4qN" firstAttribute="height" secondItem="vHW-xJ-xdC" secondAttribute="height" id="4cl-xD-urW"/>
+                            <constraint firstItem="IQ6-M8-4qN" firstAttribute="centerY" secondItem="vHW-xJ-xdC" secondAttribute="centerY" id="5SN-LL-Opi"/>
+                            <constraint firstItem="PQM-W1-9fi" firstAttribute="top" secondItem="bFp-af-loi" secondAttribute="bottom" id="91n-uk-qLC"/>
+                            <constraint firstItem="PQM-W1-9fi" firstAttribute="centerX" secondItem="vHW-xJ-xdC" secondAttribute="centerX" id="O3q-vQ-6eF"/>
+                            <constraint firstItem="IQ6-M8-4qN" firstAttribute="width" secondItem="vHW-xJ-xdC" secondAttribute="width" id="PTd-5c-cLf"/>
+                            <constraint firstItem="0oD-h6-CDf" firstAttribute="top" secondItem="IQ6-M8-4qN" secondAttribute="bottom" constant="100" id="Tl6-Ay-hdL"/>
+                            <constraint firstItem="0oD-h6-CDf" firstAttribute="centerX" secondItem="vHW-xJ-xdC" secondAttribute="centerX" id="kbx-0E-rYu"/>
+                            <constraint firstItem="PQM-W1-9fi" firstAttribute="width" secondItem="vHW-xJ-xdC" secondAttribute="width" id="rHj-Em-9H3"/>
+                            <constraint firstItem="IQ6-M8-4qN" firstAttribute="centerX" secondItem="vHW-xJ-xdC" secondAttribute="centerX" id="wxE-Zy-VSt"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="4cl-xD-urW"/>
+                                <exclude reference="PTd-5c-cLf"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="choice" destination="IQ6-M8-4qN" id="0uS-ZT-Stw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aoc-JM-ihQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="188" y="864"/>
+        </scene>
+        <!--Random Number Controller View Controller-->
+        <scene sceneID="cBD-LW-oZm">
+            <objects>
+                <viewController id="pKo-JX-6Kr" customClass="RandomNumberControllerViewController" customModule="Randomizer" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="KVj-U6-xja"/>
+                        <viewControllerLayoutGuide type="bottom" id="rJW-I5-6T1"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="goh-qS-244">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="6" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D2C-qv-FoP">
+                                <rect key="frame" x="279" y="258" width="42.5" height="85"/>
+                                <accessibility key="accessibilityConfiguration" label="choice"/>
+                                <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="70"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <navigationBar contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dmg-I6-CJl">
+                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
+                                <items>
+                                    <navigationItem title="Random Number" id="uS2-kx-HCX">
+                                        <barButtonItem key="leftBarButtonItem" title="Back" id="7r7-mH-MAc">
+                                            <connections>
+                                                <segue destination="BYZ-38-t0r" kind="show" id="BXZ-Im-cVX"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Range..." id="BDF-ZG-BVQ">
+                                            <connections>
+                                                <action selector="changeRange:" destination="pKo-JX-6Kr" id="9Aa-YV-IFF"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tNI-CE-Cc1">
+                                <rect key="frame" x="253" y="453" width="95" height="30"/>
+                                <color key="backgroundColor" red="0.43529415129999999" green="0.45098042490000001" blue="0.8980392814" alpha="1" colorSpace="deviceRGB"/>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="15"/>
+                                <inset key="contentEdgeInsets" minX="8" minY="5" maxX="8" maxY="5"/>
+                                <state key="normal" title="Randomize">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="anotherRandomNumber:" destination="pKo-JX-6Kr" eventType="touchUpInside" id="WWF-kA-yib"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="D2C-qv-FoP" firstAttribute="centerY" secondItem="goh-qS-244" secondAttribute="centerY" id="0sf-Et-qfa"/>
+                            <constraint firstItem="tNI-CE-Cc1" firstAttribute="centerX" secondItem="goh-qS-244" secondAttribute="centerX" id="7BQ-cV-J5H"/>
+                            <constraint firstItem="dmg-I6-CJl" firstAttribute="centerX" secondItem="goh-qS-244" secondAttribute="centerX" id="B83-Aw-npR"/>
+                            <constraint firstItem="dmg-I6-CJl" firstAttribute="width" secondItem="goh-qS-244" secondAttribute="width" id="CLW-VP-kyT"/>
+                            <constraint firstItem="D2C-qv-FoP" firstAttribute="centerX" secondItem="goh-qS-244" secondAttribute="centerX" id="Rh9-rE-aHP"/>
+                            <constraint firstItem="tNI-CE-Cc1" firstAttribute="top" secondItem="D2C-qv-FoP" secondAttribute="bottom" constant="100" id="gJJ-1T-MxP"/>
+                            <constraint firstItem="tNI-CE-Cc1" firstAttribute="width" relation="lessThanOrEqual" secondItem="goh-qS-244" secondAttribute="width" id="kdF-Q3-XVF"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="choice" destination="D2C-qv-FoP" id="war-Hu-xzw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="odE-v4-VE0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="955" y="-319"/>
+        </scene>
+        <!--Random Letter View Controller-->
+        <scene sceneID="WlO-sS-8ko">
+            <objects>
+                <viewController id="XHY-v2-fqt" customClass="RandomLetterViewController" customModule="Randomizer" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="T4w-Js-dNA"/>
+                        <viewControllerLayoutGuide type="bottom" id="yrt-Ss-uTR"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="u3T-r6-WiK">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DHX-zZ-uRF">
+                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
+                                <items>
+                                    <navigationItem title="Random Letter" id="goA-Pt-hhb">
+                                        <barButtonItem key="leftBarButtonItem" title="Back" id="0Pr-Qf-RPq">
+                                            <connections>
+                                                <segue destination="BYZ-38-t0r" kind="show" id="g5n-9K-euv"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="T" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1GU-69-sCl">
+                                <rect key="frame" x="253" y="243" width="95" height="85"/>
+                                <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="70"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3As-J9-ttP">
+                                <rect key="frame" x="253" y="440" width="95" height="30"/>
+                                <color key="backgroundColor" red="0.43529415129999999" green="0.45098042490000001" blue="0.8980392814" alpha="1" colorSpace="deviceRGB"/>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="15"/>
+                                <inset key="contentEdgeInsets" minX="8" minY="5" maxX="8" maxY="5"/>
+                                <state key="normal" title="Randomize">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="anotherRandomLetter:" destination="XHY-v2-fqt" eventType="touchUpInside" id="lc9-s0-DNT"/>
+                                    <action selector="randomNumber:" destination="pKo-JX-6Kr" eventType="touchUpInside" id="043-jF-Yar"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="1GU-69-sCl" firstAttribute="centerX" secondItem="u3T-r6-WiK" secondAttribute="centerX" id="FyP-Xy-lyj"/>
+                            <constraint firstItem="1GU-69-sCl" firstAttribute="width" secondItem="u3T-r6-WiK" secondAttribute="width" id="Jad-Gn-xW8"/>
+                            <constraint firstItem="DHX-zZ-uRF" firstAttribute="width" secondItem="u3T-r6-WiK" secondAttribute="width" id="PHy-7O-cQi"/>
+                            <constraint firstItem="3As-J9-ttP" firstAttribute="centerX" secondItem="u3T-r6-WiK" secondAttribute="centerX" id="UZx-pO-gkU"/>
+                            <constraint firstItem="1GU-69-sCl" firstAttribute="centerY" secondItem="u3T-r6-WiK" secondAttribute="centerY" id="VM1-GP-c4R"/>
+                            <constraint firstItem="3As-J9-ttP" firstAttribute="width" relation="lessThanOrEqual" secondItem="u3T-r6-WiK" secondAttribute="width" id="X2h-HO-9xr"/>
+                            <constraint firstItem="3As-J9-ttP" firstAttribute="top" secondItem="1GU-69-sCl" secondAttribute="bottom" constant="100" id="r5c-j7-84K"/>
+                            <constraint firstItem="DHX-zZ-uRF" firstAttribute="centerX" secondItem="u3T-r6-WiK" secondAttribute="centerX" id="sMH-TS-N03"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="choice" destination="1GU-69-sCl" id="NbQ-R4-ONT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3Yh-4I-L4a" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="955" y="422"/>
+        </scene>
+        <!--Password Settings Controller-->
+        <scene sceneID="Yjx-eM-Ew3">
+            <objects>
+                <viewController id="7tV-zY-moR" customClass="PasswordSettingsController" customModule="Randomizer" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Jqm-Su-tcm"/>
+                        <viewControllerLayoutGuide type="bottom" id="OYL-85-V8H"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="z5k-gT-LnD">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="w2R-aW-xne">
+                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
+                                <items>
+                                    <navigationItem title="Random Password" id="QzC-jn-zaH">
+                                        <barButtonItem key="leftBarButtonItem" title="Back" id="YVw-ss-kbO">
+                                            <connections>
+                                                <segue destination="zIa-vo-cRC" kind="show" identifier="passwordSettings" id="zNl-Dc-Ts7"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="n5f-Ga-tDn">
+                                <rect key="frame" x="276" y="232" width="51" height="31"/>
+                                <connections>
+                                    <action selector="saveSwitchPressedSpecial:" destination="7tV-zY-moR" eventType="valueChanged" id="B6Z-61-F1g"/>
+                                </connections>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Numeric Characters" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bqn-F9-VuR">
+                                <rect key="frame" x="102" y="198" width="154" height="21"/>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Special Characters" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eo0-dX-hEJ">
+                                <rect key="frame" x="111" y="237" width="145" height="21"/>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Password Length" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mfH-Qk-EgZ">
+                                <rect key="frame" x="124" y="276" width="132" height="21"/>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="5" minimumValue="3" maximumValue="9" translatesAutoresizingMaskIntoConstraints="NO" id="EiV-Ag-dj3">
+                                <rect key="frame" x="253" y="304" width="94" height="29"/>
+                                <connections>
+                                    <action selector="changeLength:" destination="7tV-zY-moR" eventType="valueChanged" id="xaP-ni-SS2"/>
+                                </connections>
+                            </stepper>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="veb-Dm-YP4">
+                                <rect key="frame" x="295" y="275" width="11" height="21"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="njb-XJ-0ps">
+                                <rect key="frame" x="276" y="193" width="51" height="31"/>
+                                <connections>
+                                    <action selector="saveSwitchPressedNumeric:" destination="7tV-zY-moR" eventType="valueChanged" id="oAi-oZ-BY3"/>
+                                </connections>
+                            </switch>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="w2R-aW-xne" firstAttribute="width" secondItem="z5k-gT-LnD" secondAttribute="width" id="O7P-Lm-wv7"/>
+                            <constraint firstItem="w2R-aW-xne" firstAttribute="centerX" secondItem="z5k-gT-LnD" secondAttribute="centerX" id="evX-1n-afa"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="lengthLabel" destination="veb-Dm-YP4" id="cCc-QW-RHF"/>
+                        <outlet property="lengthStepper" destination="EiV-Ag-dj3" id="mKE-O0-ids"/>
+                        <outlet property="numericSwitch" destination="njb-XJ-0ps" id="TQB-Lz-4wm"/>
+                        <outlet property="specialSwitch" destination="n5f-Ga-tDn" id="NET-U4-Sr6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VJl-T1-GB9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="955" y="1178"/>
+        </scene>
+    </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="esG-a4-IcA"/>
+        <segue reference="TSL-58-RZF"/>
+    </inferredMetricsTieBreakers>
+</document>
