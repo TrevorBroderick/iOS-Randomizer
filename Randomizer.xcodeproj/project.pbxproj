@@ -208,6 +208,7 @@
 				TargetAttributes = {
 					2B627FD81C5C1EEE0022EF88 = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = JSYMYC2QY6;
 					};
 					2B627FEC1C5C1EEE0022EF88 = {
 						CreatedOnToolsVersion = 7.2;
@@ -419,6 +420,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Randomizer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ca.bcit.comp4977.a00925723.Randomizer;
@@ -430,6 +432,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Randomizer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ca.bcit.comp4977.a00925723.Randomizer;
