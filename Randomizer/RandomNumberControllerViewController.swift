@@ -10,6 +10,7 @@ import UIKit
 
 class RandomNumberControllerViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var choice: UILabel!
+    @IBOutlet weak var rangeButton: UIBarButtonItem!
     
     var minimumRangeTextField: UITextField?
     var maximumRangeTextField: UITextField?
@@ -110,6 +111,7 @@ class RandomNumberControllerViewController: UIViewController, UITextFieldDelegat
             self.maximumRange = 2
         })
         
+        actionController.popoverPresentationController?.barButtonItem = rangeButton
         actionController.addAction(customAction)
         actionController.addAction(die6Action)
         actionController.addAction(coinAction)
